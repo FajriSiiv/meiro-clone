@@ -11,10 +11,39 @@ const Footer = () => {
     );
   };
 
+  const linkDataFooter = [
+    {
+      title: "Product",
+      links: [
+        { name: "Features", url: "/" },
+        { name: "Pricing", url: "/" },
+        { name: "Return Policy", url: "/" },
+      ],
+    },
+    {
+      title: "Use cases",
+      links: [
+        { name: "Marketing", url: "/" },
+        { name: "HR", url: "/" },
+        { name: "Education", url: "/" },
+        { name: "Content creators", url: "/" },
+      ],
+    },
+    {
+      title: "Resource",
+      links: [
+        { name: "Affiliate Program", url: "/" },
+        { name: "Roadmap", url: "/" },
+        { name: "Changelog", url: "/" },
+        { name: "Help center", url: "/" },
+      ],
+    },
+  ];
+
   return (
-    <div className="w-full max-w-[1500px] mx-auto bg-[#171818] min-h-[400px] text-slate-100 px-10 pt-10 pb-3 flex flex-col justify-between overflow-hidden">
-      <div className="flex justify-between">
-        <div className="flex flex-col gap-3">
+    <div className="w-full max-w-[1500px] mx-auto bg-[#171818] min-h-[400px] text-slate-100 px-10 pt-10 pb-3 flex flex-col justify-between overflow-hidden md:gap-24">
+      <div className="flex justify-between md:flex-col gap-10">
+        <div className="flex flex-col gap-3 w-full md:justify-between md:flex-row">
           <p className="text-4xl font-semibold">meiro</p>
           <div className="flex gap-3">
             <IconInte icon={<BsTwitterX size={20} />} />
@@ -22,33 +51,22 @@ const Footer = () => {
             <IconInte icon={<SiGmail size={20} />} />
           </div>
         </div>
-        <div className="flex gap-x-14 gap-y-7">
-          <div className="flex gap-y-4 flex-col min-w-[180px]">
-            <p className="text-lg font-semibold">Product</p>
-            <div className="flex flex-col gap-y-2.5 font-light text-white/80">
-              <span>Features</span>
-              <span>Pricing</span>
-              <span>Return Policy</span>
+        <div className="flex gap-x-14 gap-y-7 md:justify-between">
+          {linkDataFooter.map((data, index) => (
+            <div key={index} className="flex gap-y-4 flex-col min-w-[180px]">
+              <p className="text-lg font-semibold">{data.title}</p>
+              <div className="flex flex-col gap-y-2.5 font-light text-white/80">
+                {data.links.map((link, index) => (
+                  <span
+                    className="hover:text-[#D5FE52] transition-colors duration-75 cursor-pointer"
+                    key={index}
+                  >
+                    {link.name}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
-          <div className="flex gap-y-4 flex-col min-w-[180px] ">
-            <p className="text-lg font-semibold">Use cases</p>
-            <div className="flex flex-col gap-y-2.5 font-light text-white/80">
-              <span>Marketing</span>
-              <span>HR</span>
-              <span>Education</span>
-              <span>Content creators</span>
-            </div>
-          </div>
-          <div className="flex gap-y-4 flex-col min-w-[180px]">
-            <p className="text-lg font-semibold">Resources</p>
-            <div className="flex flex-col gap-y-2.5 font-light text-white/80">
-              <span>Affiliate Program</span>
-              <span>Roadmap</span>
-              <span>Changelog</span>
-              <span>Help center</span>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
