@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Button } from "../ui/button";
 import { AnimatePresence, motion } from "framer-motion";
-import { IoIosArrowDropright, IoIosArrowUp } from "react-icons/io";
+import { IoIosArrowUp } from "react-icons/io";
 import { TbTarget } from "react-icons/tb";
-import { BsArrowRight, BsPeopleFill } from "react-icons/bs";
+import { BsPeopleFill } from "react-icons/bs";
 import { ImBook } from "react-icons/im";
 import { FaMoneyBillWave, FaNewspaper } from "react-icons/fa";
 import { HiBookOpen, HiMiniMap, HiMiniMegaphone } from "react-icons/hi2";

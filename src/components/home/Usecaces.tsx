@@ -1,5 +1,4 @@
 import { dataMagicWork, dataMagicWork2 } from "@/constant";
-import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { LuSparkle } from "react-icons/lu";
 
