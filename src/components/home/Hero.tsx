@@ -5,7 +5,7 @@ import { CheckCheck } from "lucide-react";
 export const HeroSection = ({ opacity, dNone }: any) => {
   return (
     <motion.div
-      className="w-[740px] fixed -translate-x-1/2 left-1/2 "
+      className="w-[740px] fixed -translate-x-1/2 left-1/2 sm:w-full sm:px-3"
       style={{
         opacity: opacity,
         display: dNone,
@@ -13,7 +13,7 @@ export const HeroSection = ({ opacity, dNone }: any) => {
       }}
     >
       <div className="text-5xl font-semibold leading-relaxed">
-        <div className="flex justify-center items-center gap-x-2">
+        <p className="flex justify-center items-center gap-x-2 sm:text-3xl sm:leading-relaxed">
           Create
           <span>
             <svg width="37" height="38" fill="none" id="svg378967886_935">
@@ -43,8 +43,8 @@ export const HeroSection = ({ opacity, dNone }: any) => {
             </svg>
           </span>
           interactive content{" "}
-        </div>
-        <div className="flex items-center justify-center gap-x-2">
+        </p>
+        <p className="flex items-center justify-center gap-x-2 sm:text-3xl sm:leading-relaxed">
           in minutes{" "}
           <svg width="91" height="38" fill="none" id="svg1623019348_623">
             <path
@@ -70,11 +70,11 @@ export const HeroSection = ({ opacity, dNone }: any) => {
             </defs>
           </svg>{" "}
           without limits{" "}
-        </div>
+        </p>
       </div>
 
       <div className="flex flex-col gap-y-6 mt-10">
-        <p className="text-center text-[20px] text-[#CED1D1]">
+        <p className="text-center text-[20px] text-[#CED1D1] sm:text-base">
           Transform your brand's growth with AI-powered quizzes and tests –
           drive leads, engage audiences, and boost your brand recognition
         </p>

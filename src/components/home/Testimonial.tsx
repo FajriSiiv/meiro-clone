@@ -8,7 +8,7 @@ const TestimonialSection = () => {
           <Star className="fill-[#d5fe52] text-[#d5fe52]" key={index} />
         ))}
       </div>
-      <p className="max-w-[860px] text-lg  text-center">
+      <p className="max-w-[860px] text-lg  text-center sm:text-sm sm:w-4/5">
         <div className="flex justify-center">
           <span className="w-fit">
             <Quote size={10} className="fill-lime-200" />

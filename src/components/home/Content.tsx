@@ -71,13 +71,13 @@ const ContentSection = () => {
 
   return (
     <div className="pt-20 cursor-default">
-      <h2 className="text-4xl leading-normal font-semibold">
+      <h2 className="text-4xl leading-normal font-semibold sm:text-2xl">
         One platform, endless potential
       </h2>
-      <h2 className="text-4xl leading-normal font-semibold text-zinc-500">
+      <h2 className="text-4xl leading-normal font-semibold sm:text-2xl text-zinc-500">
         All features you need included
       </h2>
-      <div className="grid grid-cols-10 gap-8 py-4 min-h-[320px] ">
+      <div className="grid grid-cols-10 gap-8 py-4 min-h-[320px] sm:flex sm:flex-col">
         <div className=" col-span-4 bg-[#171818] h-full p-5 rounded-2xl">
           <h3 className="font-semibold text-2xl">Six types of blocks</h3>
           <div className="flex flex-wrap gap-3 mt-5">
@@ -137,7 +137,7 @@ const ContentSection = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-8 py-4 min-h-[320px] ">
+      <div className="grid grid-cols-2 gap-8 py-4 min-h-[320px]  sm:flex sm:flex-col">
         <div className="  bg-[#171818] h-full p-5 rounded-2xl overflow-hidden relative">
           <h3 className="font-semibold text-2xl">Embedding</h3>
           <div className=" mt-5">
@@ -159,7 +159,7 @@ const ContentSection = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-8 py-4 min-h-[280px] ">
+      <div className="grid grid-cols-3 gap-8 py-4 min-h-[280px] sm:flex sm:flex-col">
         <div className=" col-span-1 bg-[#171818] h-full p-5 rounded-2xl">
           <h3 className="font-semibold text-2xl">Protection against retries</h3>
           <div className="flex flex-col justify-end">
@@ -181,7 +181,7 @@ const ContentSection = () => {
             <img
               src={scoreBased}
               alt="score based results "
-              className="w-full h-full object-contain translate-x-[30%] translate-y-[100%] scale-150"
+              className="w-full h-full object-contain translate-x-[30%] translate-y-[100%] scale-150 sm:translate-y-0 sm:scale-100 sm:translate-x-[10%]"
             />
           </div>
         </div>

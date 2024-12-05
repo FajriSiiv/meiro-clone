@@ -1,8 +1,8 @@
 const UnlimitedSection = () => {
   return (
-    <div className="bg-[#171818] h-fit py-10 px-14 relative flex justify-start rounded-3xl overflow-hidden">
-      <div className="absolute top-0 right-0 bg-block max-w-[300px] h-[500px] "></div>
-      <div className="flex gap-10 z-10">
+    <div className="bg-[#171818] h-fit py-10 px-14 relative flex justify-start rounded-3xl overflow-hidden ">
+      <div className="absolute top-0 right-0 bg-block max-w-[300px] h-[500px] md:hidden"></div>
+      <div className="flex gap-10 z-10 md:justify-between md:w-full sm:flex-col">
         <p className="text-3xl font-semibold max-w-[300px]">
           Meiro is completely unlimited
         </p>

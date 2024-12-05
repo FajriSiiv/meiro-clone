@@ -58,6 +58,7 @@ module.exports = {
         xs: { max: "500px" },
         sm: { max: "758px" },
         md: { max: "1200px" },
+        navHidden: { min: "1200px" },
       },
     },
   },

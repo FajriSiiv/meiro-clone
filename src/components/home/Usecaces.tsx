@@ -21,7 +21,7 @@ const UsecacesSection = () => {
         Just bring us your cases
       </h2>
       <div className="mt-8"></div>
-      <div className="grid grid-cols-2 min-h-[240px] gap-8 py-4 cursor-default">
+      <div className="grid grid-cols-2 min-h-[240px] gap-8 py-4 cursor-default sm:flex sm:flex-col">
         {dataMagicWork.map((data, index) => (
           <div
             key={index}
@@ -39,7 +39,7 @@ const UsecacesSection = () => {
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-2 min-h-[240px] gap-8 py-4">
+      <div className="grid grid-cols-2 min-h-[240px] gap-8 py-4 sm:flex sm:flex-col">
         {dataMagicWork2.map((data, index) => (
           <div
             key={index}

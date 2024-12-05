@@ -1,16 +1,18 @@
 import { useState } from "react";
 import { Button } from "../ui/button";
 import { AnimatePresence, motion } from "framer-motion";
-import { IoIosArrowUp } from "react-icons/io";
+import { IoIosArrowDropright, IoIosArrowUp } from "react-icons/io";
 import { TbTarget } from "react-icons/tb";
-import { BsPeopleFill } from "react-icons/bs";
+import { BsArrowRight, BsPeopleFill } from "react-icons/bs";
 import { ImBook } from "react-icons/im";
 import { FaMoneyBillWave, FaNewspaper } from "react-icons/fa";
 import { HiBookOpen, HiMiniMap, HiMiniMegaphone } from "react-icons/hi2";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 const Navbar = () => {
   const [hover, setHover] = useState(false);
   const [hover2, setHover2] = useState(false);
+  const [openNav, setOpenNav] = useState(false);
 
   const NavDropdownMenu = ({
     icon,
@@ -20,17 +22,75 @@ const Navbar = () => {
     name: string;
   }) => {
     return (
-      <Button className="rounded-md py-2 flex justify-start items-center gap-x-2 h-fit px-2 group w-full">
-        <div className="p-2 rounded-xl bg-[#202222]">{icon}</div>
-        <span className="group-hover:text-[#d5fe52]">{name}</span>
+      <Button className="rounded-md flex justify-start items-center gap-x-2 h-fit group w-full p-2 md:bg-transparent md:shadow-none relative md:p-0 md:hover:bg-transparent">
+        <div className=" h-11 w-11 flex justify-center items-center rounded-xl bg-[#202222]">
+          {icon}
+        </div>
+        <span className="group-hover:text-[#d5fe52] md:text-base">{name}</span>
+        <div className="absolute top-1/2 -translate-y-1/2 right-5">
+          <MdKeyboardArrowRight className="scale-125 group-hover:fill-[#d5fe52]" />
+        </div>
       </Button>
     );
   };
 
+  const NavUseCases = {
+    title: "Use cases",
+    links: [
+      {
+        linkName: "Marketing",
+        icon: <TbTarget />,
+      },
+      {
+        linkName: "HR",
+        icon: <BsPeopleFill />,
+      },
+      {
+        linkName: "Education",
+        icon: <ImBook />,
+      },
+      {
+        linkName: "Content creators",
+        icon: <FaNewspaper />,
+      },
+    ],
+  };
+
+  const NavResources = {
+    title: "Resources",
+    links: [
+      {
+        linkName: "Affiliate Program",
+        icon: <FaMoneyBillWave className="scale-110" />,
+      },
+      {
+        linkName: "Roadmap",
+        icon: <HiMiniMap className="scale-110" />,
+      },
+      {
+        linkName: "Changelog",
+        icon: <HiMiniMegaphone className="scale-110" />,
+      },
+      {
+        linkName: "Help Center",
+        icon: <HiBookOpen className="scale-110" />,
+      },
+    ],
+  };
+
+  const handleNav = () => {
+    if (openNav) {
+      setOpenNav(false);
+    } else {
+      setOpenNav(true);
+    }
+  };
+
   return (
     <div className="fixed w-screen h-[84px] bg-[#0e0f0f] flex justify-between items-center px-8 text-white/95 max-w-[1500px] left-1/2 -translate-x-1/2 z-50">
+      <div className="bg-[#0e0f0f] absolute left-0 top-0 h-[84px] w-screen -z-10" />
       <p className="font-bold text-4xl">meiro</p>
-      <div className="bg-[#171818] p-2 rounded-xl flex gap-x-2">
+      <div className="bg-[#171818] p-2 rounded-xl flex gap-x-2 md:hidden">
         <Button className="hover:bg-[#202222] rounded-xl py-3">Features</Button>
         <div className="relative">
           <Button
@@ -126,7 +186,7 @@ const Navbar = () => {
         </div>
         <Button className="hover:bg-[#202222] rounded-xl py-3">Pricing</Button>
       </div>
-      <div className="flex gap-x-3">
+      <div className="flex gap-x-3 md:hidden">
         <Button className="hover:bg-[#202222] bg-transparent py-6 px-5 rounded-2xl">
           Login
         </Button>
@@ -134,6 +194,69 @@ const Navbar = () => {
           Get started
         </Button>
       </div>
+      <div
+        className="bg-gradient-to-br from-20% to-40% from-[#D5FE52] to-[#f8d6eb] h-11 w-11 relative navHidden:hidden rounded-xl group"
+        onClick={handleNav}
+      >
+        <motion.div
+          className={`w-5 h-0.5 bg-[#171818] absolute left-1/2  -translate-x-1/2   ${
+            openNav ? "rotate-45 top-1/2" : "top-1/3"
+          }  transition-all`}
+        />
+        <motion.div
+          className={`w-5 h-0.5 bg-[#171818] absolute left-1/2  -translate-x-1/2   ${
+            openNav ? "-rotate-45 top-1/2" : "bottom-1/3"
+          } transition-all`}
+        />
+      </div>
+
+      <AnimatePresence>
+        <motion.div
+          initial={{ y: "-100%" }}
+          animate={{ y: !openNav ? "-100%" : "0%" }}
+          exit={{ y: "-100%" }}
+          transition={{ duration: 0.2 }}
+          className="absolute bg-[#0e0f0f] w-screen max-w-[1500px] max-h-[1000px] h-[80vh] -z-20 left-0 top-0 overflow-auto navHidden:hidden"
+        >
+          <div className="h-fit flex flex-col gap-y-6 pt-[90px] pb-5 p-8 sm:px-4">
+            <div className="grid grid-cols-2 gap-6">
+              <div className="bg-[#171818] rounded-2xl px-6 py-4 font-semibold text-center">
+                Login
+              </div>
+              <div className="bg-[#d5fe52] text-primary rounded-2xl px-6 py-4 font-semibold text-center">
+                Get started
+              </div>
+            </div>
+            <p className="font-semibold text-2xl">Features</p>
+            <p className="font-semibold text-2xl">Pricing</p>
+
+            <div className="flex flex-col">
+              <p className="font-semibold text-2xl">{NavUseCases.title}</p>
+              <div className="flex flex-col gap-y-2 pt-2">
+                {NavUseCases.links.map((link, index) => (
+                  <NavDropdownMenu
+                    key={index}
+                    icon={link.icon}
+                    name={link.linkName}
+                  />
+                ))}
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <p className="font-semibold text-2xl">{NavResources.title}</p>
+              <div className="flex flex-col gap-y-2 pt-2">
+                {NavResources.links.map((link, index) => (
+                  <NavDropdownMenu
+                    key={index}
+                    icon={link.icon}
+                    name={link.linkName}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 };

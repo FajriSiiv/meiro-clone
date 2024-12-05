@@ -51,7 +51,7 @@ const Footer = () => {
             <IconInte icon={<SiGmail size={20} />} />
           </div>
         </div>
-        <div className="flex gap-x-14 gap-y-7 md:justify-between">
+        <div className="flex gap-x-14 gap-y-7 md:justify-between sm:flex sm:flex-col">
           {linkDataFooter.map((data, index) => (
             <div key={index} className="flex gap-y-4 flex-col min-w-[180px]">
               <p className="text-lg font-semibold">{data.title}</p>
@@ -70,9 +70,9 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex justify-between items-center text-xs font-light text-white/80 w-full">
+      <div className="flex justify-between items-center text-xs font-light text-white/80 w-full sm:flex-col-reverse sm:gap-10">
         <p className=" ">&copy; 2024 FajriSiiv. All rights reserved</p>
-        <div className="flex gap-x-3">
+        <div className="flex gap-x-3 sm:hidden">
           <IconInte icon={<BsGithub size={20} />} />
           <IconInte icon={<BsLinkedin size={20} />} />
         </div>

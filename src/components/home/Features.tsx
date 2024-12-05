@@ -14,29 +14,29 @@ export const FeatureSection = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
   return (
     <div className=" relative h-[400vw]" ref={ref}>
-      <div className="max-w-[1500px] mx-auto overflow-hidden sticky top-20 w-full">
+      <div className="max-w-[1500px] mx-auto overflow-hidden sticky top-20 w-full sm:max-h-fit">
         <motion.div style={{ x: x }} className="grid grid-cols-4 w-[400vw]">
           {dataAi.map((data, index) => {
             return (
-              <div className="flex justify-center items-center gap-x-10 h-screen w-[100vw]">
-                <div className="">
-                  <motion.div className="w-[640px] h-[480px] rounded-3xl relative overflow-hidden bg-ai-bg">
+              <div className="flex justify-center items-center gap-x-10 h-screen w-[100vw] sm:flex-col-reverse md:px-10 ">
+                <div className=" sm:hidden md:flex-1">
+                  <motion.div className="w-[640px] h-[480px] rounded-3xl relative overflow-hidden bg-ai-bg md:w-full">
                     <img
                       src={data.img}
                       className={`w-full h-full rounded-xl  ${
-                        index === 0 ? "scale-150" : ""
+                        index === 0 ? "scale-150 md:scale-100" : ""
                       }
                       ${
                         index === 1 || index === 2 || index === 3
-                          ? "scale-105 translate-y-[20%] translate-x-[10%] object-cover object-left"
-                          : ""
+                          ? "scale-105 translate-y-[20%] translate-x-[10%] object-cover object-left md:object-right"
+                          : "md:object-cover md:translate-y-[20%] md:object-left"
                       }
                       object-contain`}
                       alt={data.title}
                     />
                   </motion.div>
                 </div>
-                <div className="flex flex-col gap-4 max-w-[400px]">
+                <div className="md:flex-1 flex flex-col gap-4 max-w-[400px] md:max-w-full md:justify-center">
                   <p className="text-white/70 font-medium">{data.name}</p>
                   <h2 className="text-3xl font-semibold leading-relaxed">
                     {data.title}
