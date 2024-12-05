@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 import { AnimatePresence, motion } from "framer-motion";
 import { IoIosArrowUp } from "react-icons/io";
 import { TbTarget } from "react-icons/tb";
-import { BsPeopleFill } from "react-icons/bs";
+import { BsGithub, BsLinkedin, BsPeopleFill } from "react-icons/bs";
 import { ImBook } from "react-icons/im";
 import { FaMoneyBillWave, FaNewspaper } from "react-icons/fa";
 import { HiBookOpen, HiMiniMap, HiMiniMegaphone } from "react-icons/hi2";
@@ -13,6 +13,34 @@ const Navbar = () => {
   const [hover, setHover] = useState(false);
   const [hover2, setHover2] = useState(false);
   const [openNav, setOpenNav] = useState(false);
+
+  const IconInte = ({
+    icon,
+    url,
+    notLink = true,
+  }: {
+    icon: React.ReactNode;
+    url?: string;
+    notLink?: boolean;
+  }) => {
+    return (
+      <>
+        {notLink ? (
+          <div className="w-12 h-12 rounded-xl bg-[#202222] flex justify-center items-center">
+            {icon}
+          </div>
+        ) : (
+          <a
+            target="_blank"
+            href={url}
+            className="w-12 h-12 rounded-xl bg-[#202222] flex justify-center items-center"
+          >
+            {icon}
+          </a>
+        )}
+      </>
+    );
+  };
 
   const NavDropdownMenu = ({
     icon,
@@ -253,6 +281,18 @@ const Navbar = () => {
                   />
                 ))}
               </div>
+            </div>
+            <div className="flex gap-5 justify-center items-center">
+              <IconInte
+                url="https://github.com/FajriSiiv"
+                icon={<BsGithub size={20} />}
+                notLink={false}
+              />
+              <IconInte
+                url="https://www.linkedin.com/in/muhammad-fajri-8741031ba/"
+                icon={<BsLinkedin size={20} />}
+                notLink={false}
+              />
             </div>
           </div>
         </motion.div>

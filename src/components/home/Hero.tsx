@@ -13,10 +13,16 @@ export const HeroSection = ({ opacity, dNone }: any) => {
       }}
     >
       <div className="text-5xl font-semibold leading-relaxed">
-        <p className="flex justify-center items-center gap-x-2 sm:text-3xl sm:leading-relaxed">
+        <p className="flex justify-center items-center gap-x-2 sm:text-3xl sm:leading-relaxed xs:text-xl">
           Create
           <span>
-            <svg width="37" height="38" fill="none" id="svg378967886_935">
+            <svg
+              width="37"
+              height="38"
+              fill="none"
+              id="svg378967886_935"
+              className="xs:scale-90"
+            >
               <path
                 d="M0 .5h37v37H0V.5Z"
                 fill="url(#svg378967886_935_a)"
@@ -44,9 +50,15 @@ export const HeroSection = ({ opacity, dNone }: any) => {
           </span>
           interactive content{" "}
         </p>
-        <p className="flex items-center justify-center gap-x-2 sm:text-3xl sm:leading-relaxed">
+        <p className="flex items-center justify-center gap-x-2 sm:text-3xl sm:leading-relaxed xs:text-xl">
           in minutes{" "}
-          <svg width="91" height="38" fill="none" id="svg1623019348_623">
+          <svg
+            width="91"
+            height="38"
+            fill="none"
+            id="svg1623019348_623"
+            className="xs:scale-75"
+          >
             <path
               d="M0 .5h90.686v37H0V.5Z"
               fill="url(#svg1623019348_623_a)"
@@ -74,7 +86,7 @@ export const HeroSection = ({ opacity, dNone }: any) => {
       </div>
 
       <div className="flex flex-col gap-y-6 mt-10">
-        <p className="text-center text-[20px] text-[#CED1D1] sm:text-base">
+        <p className="text-center text-[20px] text-[#CED1D1] sm:text-base xs:text-sm">
           Transform your brand's growth with AI-powered quizzes and tests –
           drive leads, engage audiences, and boost your brand recognition
         </p>
@@ -83,7 +95,7 @@ export const HeroSection = ({ opacity, dNone }: any) => {
             Get started - it's free
           </Button>
         </div>
-        <div className="flex gap-x-8 justify-center">
+        <div className="flex gap-x-8 justify-center sm:gap-3 sm:flex-col sm:items-center">
           <div className="flex gap-x-2 items-center">
             <CheckCheck size={18} />
             <p>10-day free trial</p>

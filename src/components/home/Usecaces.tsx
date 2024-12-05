@@ -13,10 +13,10 @@ const UsecacesSection = () => {
 
   return (
     <div className="pt-20">
-      <h2 className="text-4xl leading-normal font-semibold">
+      <h2 className="text-4xl leading-normal font-semibold sm:!text-2xl">
         AI magic works for everyone
       </h2>
-      <h2 className="text-4xl leading-normal font-semibold text-zinc-500">
+      <h2 className="text-4xl leading-normal font-semibold text-zinc-500 sm:text-2xl">
         Just bring us your cases
       </h2>
       <div className="mt-8"></div>

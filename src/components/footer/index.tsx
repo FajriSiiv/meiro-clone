@@ -1,13 +1,32 @@
 import React from "react";
 import { BsGithub, BsLinkedin, BsTwitterX } from "react-icons/bs";
-import { SiGmail } from "react-icons/si";
 
 const Footer = () => {
-  const IconInte = ({ icon }: { icon: React.ReactNode }) => {
+  const IconInte = ({
+    icon,
+    url,
+    notLink = true,
+  }: {
+    icon: React.ReactNode;
+    url?: string;
+    notLink?: boolean;
+  }) => {
     return (
-      <div className="w-12 h-12 rounded-xl bg-[#202222] flex justify-center items-center">
-        {icon}
-      </div>
+      <>
+        {notLink ? (
+          <div className="w-12 h-12 rounded-xl bg-[#202222] flex justify-center items-center">
+            {icon}
+          </div>
+        ) : (
+          <a
+            target="_blank"
+            href={url}
+            className="w-12 h-12 rounded-xl bg-[#202222] flex justify-center items-center"
+          >
+            {icon}
+          </a>
+        )}
+      </>
     );
   };
 
@@ -47,8 +66,16 @@ const Footer = () => {
           <p className="text-4xl font-semibold">meiro</p>
           <div className="flex gap-3">
             <IconInte icon={<BsTwitterX size={20} />} />
-            <IconInte icon={<BsLinkedin size={20} />} />
-            <IconInte icon={<SiGmail size={20} />} />
+            <IconInte
+              notLink={false}
+              url="https://www.linkedin.com/in/muhammad-fajri-8741031ba/"
+              icon={<BsLinkedin size={20} />}
+            />
+            <IconInte
+              url="https://github.com/FajriSiiv"
+              icon={<BsGithub size={20} />}
+              notLink={false}
+            />
           </div>
         </div>
         <div className="flex gap-x-14 gap-y-7 md:justify-between sm:flex sm:flex-col">
@@ -73,8 +100,16 @@ const Footer = () => {
       <div className="flex justify-between items-center text-xs font-light text-white/80 w-full sm:flex-col-reverse sm:gap-10">
         <p className=" ">&copy; 2024 FajriSiiv. All rights reserved</p>
         <div className="flex gap-x-3 sm:hidden">
-          <IconInte icon={<BsGithub size={20} />} />
-          <IconInte icon={<BsLinkedin size={20} />} />
+          <IconInte
+            url="https://github.com/FajriSiiv"
+            icon={<BsGithub size={20} />}
+            notLink={false}
+          />
+          <IconInte
+            url="https://www.linkedin.com/in/muhammad-fajri-8741031ba/"
+            icon={<BsLinkedin size={20} />}
+            notLink={false}
+          />
         </div>
         <div className="flex gap-x-10">
           <p>Privacy Policy</p>
